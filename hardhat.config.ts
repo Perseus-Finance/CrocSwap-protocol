@@ -36,6 +36,11 @@ module.exports = {
          url: 'http://127.0.0.1:8545',
          chainId: 31337
        },
+       sepolia: {
+        url: 'https://rpc.ankr.com/eth_sepolia/aacae83934a4a93c491a94d4d47304c54ff32fea4f8e92b795038e3eb0e2e116',
+        chainId: 11155111,
+        accounts: ["0xe321e2745599c06ba9147722de7ff33ebb1bea9b653153c64870fff25eb5b864"]
+      },
        ropsten: {
          url: 'https://ropsten.infura.io/v3/cf3bc905d88d4f248c6be347adc8a1d8',
          chainId: 3,

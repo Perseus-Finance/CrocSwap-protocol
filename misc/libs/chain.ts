@@ -4,6 +4,8 @@ import { ethers } from "hardhat"
 import { CrocAddrs, CROC_ADDRS } from "../constants/addrs";
 import { CrocPoolParams, CROC_POOL_PARAMS } from "../constants/poolParams";
 import { RPC_URLS } from "../constants/rpcs";
+import dotenv from 'dotenv';
+dotenv.config()
 
 export async function traceContractDeploy 
     (deployTx: Promise<Contract>, tag: string): Promise<Contract> {
@@ -58,7 +60,7 @@ export async function refContract (contractName: string, addr: string,
 
 export function initChain (chainId?: string): 
     { wallet: Wallet, addrs: CrocAddrs, chainId: string, poolParams: CrocPoolParams } {
-
+  
     chainId = chainId || process.env.CHAIN_ID || 'mock';
     const addrs = CROC_ADDRS[chainId as keyof typeof CROC_ADDRS]
     const rpcUrl = RPC_URLS[chainId as keyof typeof RPC_URLS]
@@ -66,6 +68,7 @@ export function initChain (chainId?: string):
 
     const provider = new JsonRpcProvider(rpcUrl)
     const key = process.env.WALLET_KEY as string
+    console.log(`Connecting wallet to chain ${chainId} with key ${key}`)
     const wallet = new Wallet(key.toLowerCase()).connect(provider)
 
     return { addrs, wallet, chainId, poolParams }

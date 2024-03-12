@@ -17,7 +17,7 @@ import { CrocPolicy } from '../../typechain/CrocPolicy';
 import { CrocQuery } from '../../typechain/CrocQuery';
 import { CrocShell } from '../../typechain/CrocShell';
 import { HotPath } from '../../typechain/HotPath';
-import { CrocImpact, KnockoutFlagPath, KnockoutLiqPath } from '../../typechain';
+import { CrocImpact, KnockoutFlagPath, KnockoutLiqPath } from '../../typechxain';
 
 let override = { gasPrice: BigNumber.from("10").pow(9).mul(2), gasLimit: 6000000 }
 

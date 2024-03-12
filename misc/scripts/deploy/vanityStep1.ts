@@ -9,12 +9,12 @@
 import { inflateAddr, initChain } from '../../libs/chain';
 
 async function deploy() {
-    let { addrs, chainId, wallet: authority } = initChain()
+    let { addrs, chainId, wallet: authority } = initChain("0x9")
     console.log(`Deploying CrocSwapDeployer Contract to chain ${chainId}...`)
-    console.log("Initial Authority: ")
 
     let crocDeployer = inflateAddr("CrocDeployer", addrs.deployer, authority, 
         authority.address)
+        
     addrs.deployer = (await crocDeployer).address
 
     console.log("CrocDeployer: ", addrs.deployer)

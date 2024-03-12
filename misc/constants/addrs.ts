@@ -120,6 +120,32 @@ const mainnetAddrs: CrocAddrs = {
     govern: emptryGovAddrs
 }*/ 
 
+// Sepolia
+const sepoliaAddrs: CrocAddrs = {
+    dex: "0xbfd7187B085353A451af2A93eB24792210E469F7",
+    cold: "0xB3e89605Ae35b97337D56Dd1c03398d39ddeDFFc",
+    warm: "0xb10180382C5BefC75CDD9225b9473366b5c48Dea",
+    long: "0x622e2D7a62995398b9c9163bAeD7f02cD7339967",
+    micro: "0x128afa3b610A80A71BcaA7AF46f71e961Fb91563",
+    hot: "0xB09BA96504eDc85105adABA72F598d997c74Dc76",
+    knockout: "0x32745BDCe4f9B9C7D5E9F4ae2C3DfB6E107a9793",
+    koCross: "0x618f970809923F0d5C7881c00a50D1124b0F17EA",
+    policy: "0x842cb6ac90B4BE5cA38e96A9a6cE09039B49c9A5",
+    query: "0xD4a38BC34Ad81035264d7eDA1BeD57189F397E34", 
+    impact: "0x5e10D1e22488c0B4FE93d32E9B0C09524a5fd86a",
+    shell: "",
+    policyShell: "",
+    deployer: "0x2E86FC9555f7E57eF39c7E4a444511fd051CfB68",
+    govern: {
+	    multisigTreasury: '0x969c8407D311728C4960FDF8cDF5D65c65fC41A7',
+        multisigOps: '0x3804853599Be366b297fB9125C99B3E218fE8233',
+        multisigEmergency: '0x803291D2581C17de29FecA7C64b309e241988e2C',
+        timelockTreasury: '0x32772ee725BF392d4c09396967718E069eeC8f52',
+        timelockOps: '0x6b9698cb86eDc9c28328031D7FC66fE64CAD9ec0',
+        timelockEmergency: '0x8dFcd012EFc19BBd3f13130201574aBd3eD338e1'
+	}
+}
+
 const goerliAddrsDryRun: CrocAddrs = {
     dex: '0xAaAaAAAaA24eEeb8d57D431224f73832bC34f688',
     cold: '0x0b6CD0ECb176cb39Ad99B3A0E4294167a80B68a3',
@@ -151,20 +177,22 @@ export let CROC_ADDRS = {
     '0x1': mainnetAddrs,
     '0x5': goerliAddrsDryRun,
     'mock': mockAddrs,
+    '0x9': sepoliaAddrs
 }
 
 // Goerli
 export let TOKEN_ADDRS = {
-    '0x5': {
+    '0x9': {
         eth: ethers.constants.AddressZero,
-        dai: "0xdc31Ee1784292379Fbb2964b3B9C4124D8F89C60",
-        usdc: "0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C"
+        dai: "0x82fb927676b53b6eE07904780c7be9b4B50dB80b",
+        usdc: "0x2B0974b96511a728CA6342597471366D3444Aa2a"
     }
 }
 
 export let POOL_IDXS = {
     '0x5': 36000,
-    '0x1': 420
+    '0x1': 420,
+    '0x9': 38000
 }
 
 export const BOOT_PROXY_IDX = 0;
