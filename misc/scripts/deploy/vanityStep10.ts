@@ -11,7 +11,7 @@ import { initLiqCmd, poolStdTemplCmd } from '../../libs/pool';
 const abi = new AbiCoder()
 
 async function install() {
-    let { addrs } = initProvider("0x9")
+    let { addrs } = initProvider("0xaa36a7")
 
     const timeDelay = 1
     await opsTimelockSet(addrs, timeDelay, INIT_TIMELOCK_DELAY)
