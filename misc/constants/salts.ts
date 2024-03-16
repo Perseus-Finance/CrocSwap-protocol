@@ -14,8 +14,8 @@ CREATE2_SALTS.set('0x7aec2E7012b6A365a867eCc27F0E7916f52c3555'.toLowerCase(),
     '0x22263a6039605f5323cabad97043d3942fa8b83aebf9e5d4b9b3f7f0e6ea4101')     
 
 CREATE2_SALTS.set(
-  "0xe60ECE2007622560247A349Ea9d4e37bB8fd7E08".toLowerCase(),
-  "0x0ee465c0c4fac22f6a158e23677d7d284a07b9c54606843758cf2fdf25b58ffe"
+  "0xfDCE2806c1a62101142693f52dFEcE21198635a0".toLowerCase(),
+  "0x26b880335f4a8a449e7a75408d3d31e6bc9e625000226195670dd0a3fc5ef9a6"
 );
 
 export function mapSalt(deployerAddr: string): BigNumber {

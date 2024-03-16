@@ -27,6 +27,7 @@ async function vanityDeploy() {
         authority) as CrocDeployer
 
     const factory = await ethers.getContractFactory("CrocSwapDex")
+
     console.log(await crocDeployer.callStatic.deploy(factory.bytecode, salt))
 
     await traceContractTx(crocDeployer.deploy(factory.bytecode, salt, { gasLimit: BigNumber.from(10000000) }), "Salted Deploy")

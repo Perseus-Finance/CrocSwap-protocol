@@ -1,5 +1,3 @@
-import { ethers } from "hardhat";
-
 // Convention is to use empty string for pre-deployed contract
 export interface CrocAddrs {
   dex: string;
@@ -119,32 +117,31 @@ const mainnetAddrs: CrocAddrs = {
     govern: emptryGovAddrs
 }*/
 
-
 // Sepolia
 const sepoliaAddrs: CrocAddrs = {
-    dex: '0x561f094621faC97faAf474873011632F49aa2Bfb',
-    cold: '0xC6d4CEaa9fCE86e78128E8387c3cAa75090a756D',
-    warm: '0xdBCA0cFb189F23e99a1f208F03716DbBf698e5f6',
-    long: '0xf1586Ec2Cfb5b10182B9018Dd212cCA5F7131029',
-    micro: '0x5799d0cf5f105ea2eA3C061dAb0dD97C3c0Fe7c0',
-    hot: '0xE1893B89C0cE127528c0dB859f5169049ef347A4',
-    knockout: '0xF0929b545a5A2165a6DDD1C358d57bdB86b602Fc',
-    koCross: '0xF762B5834fcec00f14Db173660f41bF3EEa11dA9',
-    policy: '0x599517f02F6A5D926eC2650BD5214a70556CEf64',
-    query: '0xF0dDdeb917061e12613F9CFc1A3065fb8B3F5c46',
-    impact: '0x0Adb7E0598AaDC92F0Fd8442c0d084a5dAA84b52',
-    shell: '',
-    policyShell: '',
-    deployer: '0x7aec2E7012b6A365a867eCc27F0E7916f52c3555',
-    govern: {
-      multisigTreasury: '0x969c8407D311728C4960FDF8cDF5D65c65fC41A7',
-      multisigOps: '0x3804853599Be366b297fB9125C99B3E218fE8233',
-      multisigEmergency: '0x803291D2581C17de29FecA7C64b309e241988e2C',
-      timelockTreasury: '0x0bB635D865cD73313e66c518848A3Ce763D9717b',
-      timelockOps: '0x0736434914B9437e868ea7FDcD2Fc85f7c51DB95',
-      timelockEmergency: '0x0bB635D865cD73313e66c518848A3Ce763D9717b'
-    }
-  }
+  dex: "0x561f094621faC97faAf474873011632F49aa2Bfb",
+  cold: "0xC6d4CEaa9fCE86e78128E8387c3cAa75090a756D",
+  warm: "0xdBCA0cFb189F23e99a1f208F03716DbBf698e5f6",
+  long: "0xf1586Ec2Cfb5b10182B9018Dd212cCA5F7131029",
+  micro: "0x5799d0cf5f105ea2eA3C061dAb0dD97C3c0Fe7c0",
+  hot: "0xE1893B89C0cE127528c0dB859f5169049ef347A4",
+  knockout: "0xF0929b545a5A2165a6DDD1C358d57bdB86b602Fc",
+  koCross: "0xF762B5834fcec00f14Db173660f41bF3EEa11dA9",
+  policy: "0x599517f02F6A5D926eC2650BD5214a70556CEf64",
+  query: "0xF0dDdeb917061e12613F9CFc1A3065fb8B3F5c46",
+  impact: "0x0Adb7E0598AaDC92F0Fd8442c0d084a5dAA84b52",
+  shell: "",
+  policyShell: "",
+  deployer: "0x7aec2E7012b6A365a867eCc27F0E7916f52c3555",
+  govern: {
+    multisigTreasury: "0x969c8407D311728C4960FDF8cDF5D65c65fC41A7",
+    multisigOps: "0x3804853599Be366b297fB9125C99B3E218fE8233",
+    multisigEmergency: "0x803291D2581C17de29FecA7C64b309e241988e2C",
+    timelockTreasury: "0x0bB635D865cD73313e66c518848A3Ce763D9717b",
+    timelockOps: "0x0736434914B9437e868ea7FDcD2Fc85f7c51DB95",
+    timelockEmergency: "0x0bB635D865cD73313e66c518848A3Ce763D9717b",
+  },
+};
 
 const goerliAddrsDryRun: CrocAddrs = {
   dex: "0xAaAaAAAaA24eEeb8d57D431224f73832bC34f688",
@@ -171,7 +168,6 @@ const goerliAddrsDryRun: CrocAddrs = {
   },
 };
 
-
 export let CROC_ADDRS = {
   "0x1": mainnetAddrs,
   "0x5": goerliAddrsDryRun,
@@ -179,27 +175,13 @@ export let CROC_ADDRS = {
   mock: mockAddrs,
 };
 
-// Goerli
-// export let TOKEN_ADDRS = {
-//   "0x5": {
-//     eth: ethers.constants.AddressZero,
-//     dai: "0xdc31Ee1784292379Fbb2964b3B9C4124D8F89C60",
-//     usdc: "0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C",
-//   },
-// };
-
 export let TOKEN_ADDRS = {
   "0xaa36a7": {
-    eth: ethers.constants.AddressZero,
+    eth: "0x0000000000000000000000000000000000000000",
     dai: "0x3e622317f8c93f7328350cf0b56d9ed4c620c5d6",
     usdc: "0xf08a50178dfcde18524640ea6618a1f965821715",
   },
 };
-
-// export let POOL_IDXS = {
-//   "0x5": 36000,
-//   "0x1": 420,
-// };
 
 export let POOL_IDXS = {
   "0xaa36a7": 36000,

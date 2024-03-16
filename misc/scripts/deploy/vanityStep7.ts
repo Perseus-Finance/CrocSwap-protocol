@@ -10,7 +10,6 @@ import { BigNumber, BytesLike, ethers } from 'ethers';
 import { opsResolution, populateTimelockCalls } from '../../libs/governance';
 
 const abi = new AbiCoder()
-let cmd
 
 const txArgs = { gasLimit: 1000000 }
 

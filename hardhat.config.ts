@@ -6,9 +6,11 @@ import "hardhat-typechain";
 import "@nomiclabs/hardhat-ethers";
 import "hardhat-contract-sizer";
 import "@nomicfoundation/hardhat-verify";
+import "hardhat-storage-layout";
+import "solidity-coverage";
 
-require("hardhat-storage-layout");
-require("solidity-coverage");
+import "./misc/scripts/cmds";
+
 
 module.exports = {
   solidity: {
