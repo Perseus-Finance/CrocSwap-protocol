@@ -1,16 +1,29 @@
+# Environment variables
+.env
+
+# Backup files
 *~
+.\#*
+
+# Temporary files
 tmp*
 \#*
-.\#*
+
+# Build directories
 bld/
 node_modules/
 artifacts/
 cache/
-hardhat.config.js
 typechain/
+
+# Configuration and logs
+hardhat.config.js
 yarn-error.log
 tenderly.yaml
+
+# Coverage reports
 coverage.json
 coverage/
+
+# Specific JSON layout files
 layout.*.json
-.env
