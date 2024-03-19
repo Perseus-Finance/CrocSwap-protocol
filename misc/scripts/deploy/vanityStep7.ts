@@ -6,7 +6,7 @@ import { AbiCoder } from '@ethersproject/abi';
 import { CrocPolicy, ERC20, TimelockAccepts } from '../../../typechain';
 import { BOOT_PROXY_IDX, LP_PROXY_IDX, TOKEN_ADDRS } from '../../constants/addrs';
 import { BigNumber, BytesLike, ethers } from 'ethers';
-import { MockERC20 } from '../../../contracts/typechain';
+// import { MockERC20 } from '../../../contracts/typechain';
 import { opsResolution, populateTimelockCalls } from '../../libs/governance';
 
 const abi = new AbiCoder()
@@ -15,7 +15,7 @@ let cmd
 const txArgs = { gasLimit: 1000000 }
 
 async function install() {
-    let { addrs, chainId, wallet: authority } = initChain()
+    let { addrs, chainId, wallet: authority } = initChain("0x9")
 
     let policy = (await refContract("CrocPolicy", addrs.policy, authority)) as CrocPolicy
     await traceContractTx(policy.transferGovernance(addrs.govern.timelockOps, 

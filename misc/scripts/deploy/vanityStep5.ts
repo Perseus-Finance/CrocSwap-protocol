@@ -12,7 +12,7 @@ let cmd
 const txArgs = { gasLimit: 1000000}
 
 async function install() {
-    let { addrs, chainId, wallet: authority } = initChain()
+    let { addrs, chainId, wallet: authority } = initChain("0x9")    
 
     let policy = (await inflateAddr("CrocPolicy", addrs.policy, authority)) as CrocPolicy
 

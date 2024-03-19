@@ -11,7 +11,7 @@ import { AbiCoder } from '@ethersproject/abi';
 const abi = new AbiCoder()
 
 async function vanityDeploy() {
-    let { addrs, chainId, wallet: authority } = initChain()
+    let { addrs, chainId, wallet: authority } = initChain("0x9")
 
     const crocDeployer = await refContract("CrocDeployer", addrs.deployer, 
         authority) as CrocDeployer

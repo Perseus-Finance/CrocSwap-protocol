@@ -6,16 +6,16 @@ import { AbiCoder } from '@ethersproject/abi';
 import { CrocPolicy, ERC20, TimelockAccepts } from '../../../typechain';
 import { BOOT_PROXY_IDX, LP_PROXY_IDX, TOKEN_ADDRS } from '../../constants/addrs';
 import { BigNumber, BytesLike, ethers } from 'ethers';
-import { MockERC20 } from '../../../contracts/typechain';
+// import { MockERC20 } from '../../../contracts/typechain';
 import { opsResolution, populateTimelockCalls } from '../../libs/governance';
 
 const abi = new AbiCoder()
 let cmd
 
 async function install() {
-    let { addrs, chainId, wallet: authority } = initChain()
+    let { addrs, chainId, wallet: authority } = initChain("0x9")
 
-    const START_DELAY = 30;    
+    const START_DELAY = 1;    
 
     addrs.govern.timelockTreasury = (await inflateAddr("TimelockAccepts", addrs.govern.timelockTreasury, authority,
         START_DELAY, [addrs.govern.multisigTreasury], [addrs.govern.multisigTreasury])).address

@@ -4,11 +4,11 @@
 
 import "hardhat-typechain";
 import "@nomiclabs/hardhat-ethers";
-import "hardhat-contract-sizer"
+import "hardhat-contract-sizer";
 import "@nomicfoundation/hardhat-verify";
 
 require("hardhat-storage-layout");
-require('solidity-coverage')
+require('solidity-coverage');
 
 module.exports = {
     solidity: {
@@ -72,5 +72,11 @@ module.exports = {
         chainId: 43113,
       },
 
+    },
+
+    etherscan: {
+        apiKey: {
+          sepolia: "9WKRJGEQ94JRDJ2R5FNW13ZGMDUUAYTZQF"
+        }
     }
 };

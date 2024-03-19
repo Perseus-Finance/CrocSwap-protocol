@@ -4,14 +4,14 @@ import { AbiCoder } from '@ethersproject/abi';
 import { CrocPolicy, ERC20, TimelockAccepts } from '../../../typechain';
 import { BOOT_PROXY_IDX, LP_PROXY_IDX, TOKEN_ADDRS } from '../../constants/addrs';
 import { BigNumber, BytesLike, ethers } from 'ethers';
-import { MockERC20 } from '../../../contracts/typechain';
+// import { MockERC20 } from '../../../contracts/typechain';
 import { CrocProtocolCmd, opsResolution, populateTimelockCalls, treasuryResolution } from '../../libs/governance';
 
 const abi = new AbiCoder()
 let cmd
 
 async function install() {
-    let { addrs } = initChain()
+    let { addrs } = initChain("0x9")
 
     // Warm path may have already been pre-installed, but install again to verify that
     // treasury resolutions are correctly enabled
@@ -22,7 +22,7 @@ async function install() {
         sudo: true
     }
 
-    treasuryResolution(addrs, resolution, 30, "Install Warm path sidecar")
+    treasuryResolution(addrs, resolution, 1, "Install Warm path sidecar")
 }
 
 install()
