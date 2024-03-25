@@ -4,8 +4,9 @@ import { ethers } from "hardhat"
 import { CrocAddrs, CROC_ADDRS } from "../constants/addrs";
 import { CrocPoolParams, CROC_POOL_PARAMS } from "../constants/poolParams";
 import { RPC_URLS } from "../constants/rpcs";
-import dotenv from 'dotenv';
+import dotenv from 'dotenv'
 dotenv.config()
+
 
 export async function traceContractDeploy 
     (deployTx: Promise<Contract>, tag: string): Promise<Contract> {

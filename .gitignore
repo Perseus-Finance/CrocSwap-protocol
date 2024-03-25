@@ -27,3 +27,6 @@ coverage/
 
 # Specific JSON layout files
 layout.*.json
+.env
+settings.json
+```
