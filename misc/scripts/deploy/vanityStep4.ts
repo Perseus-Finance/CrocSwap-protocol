@@ -6,7 +6,7 @@ import { AbiCoder } from '@ethersproject/abi';
 const abi = new AbiCoder()
 
 async function install() {
-    let { addrs, chainId, wallet: authority } = initChain("0x9")
+    let { addrs, chainId, wallet: authority } = initChain()
 
     addrs.cold = (await inflateAddr("ColdPath", addrs.cold, authority)).address
     console.log(addrs)

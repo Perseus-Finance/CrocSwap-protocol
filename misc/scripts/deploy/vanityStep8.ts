@@ -11,7 +11,7 @@ const abi = new AbiCoder()
 let cmd
 
 async function install() {
-    let { addrs } = initChain("0x9")
+    let { addrs } = initChain()
 
     // Warm path may have already been pre-installed, but install again to verify that
     // treasury resolutions are correctly enabled

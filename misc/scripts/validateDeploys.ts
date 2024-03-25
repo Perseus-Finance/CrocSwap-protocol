@@ -1,14 +1,20 @@
-/* Creates the sidecar proxy contracts and periphery contracts. */
+/* 
+   The following script is responsible for validating the deployment of the Croc contracts by comparing the deployed byte coode to the onchain byte code.
+*/
 
-import { initProvider, validateDeploy } from '../libs/chain';
+import { initProvider, validateDeploy } from "../libs/chain";
 
-let { addrs, provider: provider } = initProvider()
+const deploymnetChainId = "0xaa36a7";
+let { addrs, provider: provider } = initProvider(deploymnetChainId);
 
 async function validate() {
-    console.log('------------------------------------------------------------------')
+  console.log(
+    "------------------------------------------------------------------"
+  );
 
-    console.log("Validating Core Contracts...")
-    let pending = [
+  console.log("Validating Core Contracts...");
+
+  let pending = [
     validateDeploy(addrs.cold, "ColdPath", provider),
     validateDeploy(addrs.hot, "HotProxy", provider),
     validateDeploy(addrs.long, "LongPath", provider),
@@ -17,16 +23,21 @@ async function validate() {
     validateDeploy(addrs.knockout, "KnockoutLiqPath", provider),
     validateDeploy(addrs.koCross, "KnockoutFlagPath", provider),
     validateDeploy(addrs.dex, "CrocSwapDex", provider),
-    validateDeploy(addrs.policy, "CrocPolicy", provider, addrs.dex)]
-    await Promise.all(pending)
-    console.log()
+    validateDeploy(addrs.policy, "CrocPolicy", provider, addrs.dex),
+  ];
 
-    console.log("Validating Peripheral Contracts...")
-    pending = [
+  await Promise.all(pending);
+  console.log();
+
+  console.log("Validating Peripheral Contracts...");
+
+  pending = [
     validateDeploy(addrs.impact, "CrocImpact", provider, addrs.dex),
-    validateDeploy(addrs.query, "CrocQuery", provider, addrs.dex)]
-    await Promise.all(pending)
-    console.log()
+    validateDeploy(addrs.query, "CrocQuery", provider, addrs.dex),
+  ];
+
+  await Promise.all(pending);
+  console.log();
 }
 
-validate()
+validate();

@@ -13,7 +13,7 @@ const abi = new AbiCoder()
 let cmd
 
 async function install() {
-    let { addrs, chainId, wallet: authority } = initChain("0x9")
+    let { addrs, chainId, wallet: authority } = initChain()
 
     const START_DELAY = 1;    
 
