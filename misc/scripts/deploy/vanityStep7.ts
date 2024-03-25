@@ -14,7 +14,7 @@ const abi = new AbiCoder()
 const txArgs = { gasLimit: 1000000 }
 
 async function install() {
-    let { addrs, chainId, wallet: authority } = initChain("0x9")
+    let { addrs, chainId, wallet: authority } = initChain()
 
     let policy = (await refContract("CrocPolicy", addrs.policy, authority)) as CrocPolicy
     await traceContractTx(policy.transferGovernance(addrs.govern.timelockOps, 

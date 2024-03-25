@@ -12,11 +12,9 @@ import { mapSalt } from '../../constants/salts';
 import { CROC_ADDRS } from '../../constants/addrs';
 import { initChain, refContract, traceContractTx, traceTxResp } from '../../libs/chain';
 import { RPC_URLS } from '../../constants/rpcs';
-import dotenv from 'dotenv'
-dotenv.config()
 
 async function vanityDeploy() {
-    let { addrs, chainId, wallet: authority } = initChain("0x9")
+    let { addrs, chainId, wallet: authority } = initChain()
 
     const salt = mapSalt(addrs.deployer)
 

@@ -11,7 +11,7 @@ import { initLiqCmd, poolStdTemplCmd } from '../../libs/pool';
 const abi = new AbiCoder()
 
 async function install() {
-    let { addrs, poolParams } = initProvider("0x9")
+    let { addrs, poolParams } = initProvider()
 
     let initCmd = initLiqCmd(poolParams)
     await opsResolution(addrs, initCmd, INIT_TIMELOCK_DELAY, "Set pool init liquidity")
